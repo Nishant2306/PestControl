@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pest Control India — Alwar</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0b6b45">
+<style>
+  :root{
+    --bg: #f6fbf8;
+    --card: #ffffff;
+    --text: #0f1720;
+    --muted:#51606a;
+    --accent-1: #0b6b45;
+    --accent-2: #28b374;
+    --accent-3: #f6be4a;
+    --glass: rgba(255,255,255,0.62);
+    --radius:18px;
+    --container: 1280px;
+
+    /* service strip */
+    --service-bg: linear-gradient(90deg,#ffffff,#fbfffb);
+    --service-icon-bg: linear-gradient(180deg,#f0fff5,#f9fffb);
+    --service-text: #0f1720;
+
+    /* buttons */
+    --btn-gradient: linear-gradient(90deg,var(--accent-1),var(--accent-2));
+    --btn-ghost-bg: rgba(0,0,0,0.03);
+
+    /* classy quote (updated) */
+    --quote-bg-start: #1e6b48; /* deep, rich green */
+    --quote-bg-end: #0b6b45;
+    --quote-shadow: 0 14px 40px rgba(11,107,69,0.18);
+  }
+
+  /* Dark theme variables */
+  body.dark{
+    --bg: linear-gradient(180deg,#071016,#08121a);
+    --card: rgba(255,255,255,0.03);
+    --text: #e6f3ef;
+    --muted: #9fbfb0;
+    --glass: rgba(255,255,255,0.03);
+
+    --service-bg: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    --service-icon-bg: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    --service-text: #e6f3ef;
+
+    --btn-ghost-bg: rgba(255,255,255,0.02);
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+    background: var(--bg);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.5;
+  }
+  .wrap{max-width:var(--container);margin:36px auto;padding:28px}
+
+  /* topbar */
+  .topbar{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding:12px 18px;border-radius:14px;background:linear-gradient(90deg,rgba(255,255,255,0.78), rgba(255,255,255,0.5));
+    backdrop-filter: blur(6px);
+  }
+  body.dark .topbar{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
+  .brand{display:flex;gap:14px;align-items:center}
+  .logo{
+    width:72px;height:72px;border-radius:14px;display:grid;place-items:center;
+    font-weight:700;font-family:Poppins,Inter;color:white;
+    background:linear-gradient(135deg,var(--accent-1),var(--accent-2));
+    box-shadow: 0 12px 34px rgba(10,40,20,0.14);
+    font-size:20px;
+  }
+  .brand h1{margin:0;font-size:18px;letter-spacing:0.4px}
+  .brand p{margin:0;font-size:13px;color:var(--muted)}
+
+  .actions{display:flex;gap:12px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;text-decoration:none;font-weight:700;
+    font-size:15px;border:none;cursor:pointer;
+  }
+
+  /* CALL button (fixed: SVG, centered, no emoji) */
+  .btn-call{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 18px;
+    border-radius:999px;
+    background: linear-gradient(135deg, #1f8f5f, #0b6b45);
+    color:#ffffff;
+    font-weight:700;
+    font-size:15px;
+    text-decoration:none;
+    line-height:1;
+    box-shadow:0 10px 28px rgba(11,107,69,0.18);
+  }
+  .btn-call svg{width:18px;height:18px;flex-shrink:0;display:block}
+
+  /* cleaned-up Email pill */
+  .btn-email{
+    display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;
+    background:var(--btn-ghost-bg);color:var(--text);border:1px solid rgba(0,0,0,0.06);font-weight:700;
+    font-size:14px;text-decoration:none;
+  }
+  body.dark .btn-email{border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+  .btn-email svg{opacity:0.95;display:block}
+
+  .btn:active{transform:translateY(1px)}
+
+  /* hero (bigger / more immersive) */
+  .hero{
+    display:grid;grid-template-columns:1fr 420px;gap:32px;margin-top:26px;align-items:start;
+  }
+  .hero-main{
+    padding:40px;border-radius:20px;background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,255,255,0.98));box-shadow:0 28px 80px rgba(8,40,20,0.08);
+  }
+  body.dark .hero-main{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 14px 50px rgba(0,0,0,0.5)}
+  .kicker{display:inline-block;padding:8px 14px;border-radius:999px;background:linear-gradient(90deg,#ebf9f0,#f2fff6);color:var(--accent-1);font-weight:700;font-size:13px}
+  .title{font-size:44px;margin:14px 0 10px;line-height:1.02}
+  .subtitle{color:var(--muted);margin:0 0 20px;font-size:18px}
+
+  /* service strip (contrast fixed) */
+  .services-strip{
+    display:flex;gap:18px;align-items:center;padding:14px;border-radius:14px;background:var(--service-bg);
+    border:1px solid rgba(0,0,0,0.04);
+  }
+  body.dark .services-strip{border:1px solid rgba(255,255,255,0.03)}
+  .service-item{display:flex;gap:14px;align-items:center}
+  .service-icon{
+    width:72px;height:72px;border-radius:12px;display:grid;place-items:center;font-size:30px;
+    background:var(--service-icon-bg);color:var(--accent-1);font-weight:800;box-shadow:0 12px 30px rgba(10,40,20,0.06);
+  }
+  .service-label{font-weight:800;color:var(--service-text);font-size:16px}
+  .service-sub{color:var(--muted);font-size:13px}
+
+  /* features row (concise) */
+  .features{display:flex;gap:16px;margin-top:22px;flex-wrap:wrap}
+  .feature{
+    flex:1;min-width:240px;padding:18px;border-radius:14px;background:var(--card);border:1px solid #eef6f0;
+    display:flex;gap:14px;align-items:start;box-shadow:0 18px 40px rgba(8,40,20,0.05)
+  }
+  body.dark .feature{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+  .ficon{width:54px;height:54px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(180deg,#fff6ea,#fff4ea);font-weight:800;color:var(--accent-3);font-size:18px}
+  .feature h4{margin:0;font-size:17px}
+  .feature p{margin:8px 0 0;color:var(--muted);font-size:14px}
+
+  /* aside: big contact + trust */
+  .aside{
+    padding:24px;border-radius:16px;background:linear-gradient(180deg,#ffffff,#fbfffb);border:1px solid #eef6f0;box-shadow:0 24px 54px rgba(8,40,20,0.07);
+    display:flex;flex-direction:column;gap:14px;height:max-content;
+    transition:height .18s ease;
+  }
+  body.dark .aside{background:linear-gradient(180deg, rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+
+  .contact-row{display:flex;gap:12px;align-items:center}
+  .tel{font-weight:900;font-size:20px;color:var(--accent-1)}
+  .small-muted{color:var(--muted);font-size:13px}
+
+  /* improved request-quote button — now classy deep green */
+  .quote-btn{
+    display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;
+    background:linear-gradient(90deg,var(--quote-bg-start),var(--quote-bg-end));
+    color:#fff;font-weight:900;text-decoration:none;border:none;box-shadow:var(--quote-shadow);
+    font-size:15px;cursor:pointer;
+  }
+  .quote-btn svg{filter:drop-shadow(0 6px 18px rgba(0,0,0,0.12))}
+  .quote-btn:hover{transform:translateY(-3px)}
+  .quote-btn:active{transform:translateY(1px)}
+
+  /* ghost alternative for less emphasis */
+  .quote-ghost{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--text);text-decoration:none}
+
+  .request-btn{display:block;padding:12px 14px;border-radius:12px;text-align:center;font-weight:800;background:var(--btn-gradient);color:#fff;text-decoration:none}
+
+  /* testimonials compact */
+  .testimonials{margin-top:20px;display:flex;gap:12px;flex-direction:column}
+  .testi{padding:16px;border-radius:14px;background:linear-gradient(180deg,#ffffff,#fbfffb);border:1px solid #eef6f0}
+  body.dark .testi{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03)}
+  .testi p{margin:0;color:var(--muted)}
+  .testi strong{display:block;margin-bottom:8px;color:var(--accent-1)}
+
+  footer{margin-top:28px;text-align:center;color:var(--muted);font-size:14px}
+
+  .muted{color:var(--muted)}
+  .center{display:flex;align-items:center;justify-content:center}
+  .space{height:22px}
+
+  /* responsive */
+  @media (max-width:1100px){
+    .hero{grid-template-columns:1fr 380px}
+  }
+  @media (max-width:880px){
+    .hero{grid-template-columns:1fr}
+    .actions{flex-wrap:wrap}
+    .services-strip{flex-direction:column;align-items:flex-start}
+    .service-icon{width:60px;height:60px;font-size:26px}
+  }
+  @media (max-width:520px){
+    .title{font-size:28px}
+    .feature{min-width:100%}
+    .service-icon{width:56px;height:56px;font-size:22px}
+  }
+
+  /* subtle animations */
+  .fade{opacity:0;transform:translateY(10px);animation:in .6s forwards}
+  .fade.delay1{animation-delay:0.06s}
+  .fade.delay2{animation-delay:0.12s}
+  .fade.delay3{animation-delay:0.18s}
+  @keyframes in{to{opacity:1;transform:none}}
+
+  /* accessible focus */
+  a:focus, button:focus {outline:3px solid rgba(11,107,69,0.14);outline-offset:4px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- topbar -->
+    <div class="topbar fade">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">PCI</div>
+        <div>
+          <h1 style="margin:0">Pest Control India</h1>
+          <p style="margin:0;font-size:13px;color:var(--muted)">Alwar · Residential & Commercial</p>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="themeToggle" class="btn btn-email" aria-label="Toggle theme">🌙 Dark</button>
+
+        <!-- improved email pill, with inline SVG envelope -->
+        <a id="emailTop" class="btn-email" href="mailto:info@pestcontrolsindia.com" aria-label="Email Pest Control India">
+          <svg width="16" height="12" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 3.5C1 2.7 1.7 2 2.5 2h19c.8 0 1.5.7 1.5 1.5v11c0 .8-.7 1.5-1.5 1.5h-19C1.7 16 1 15.3 1 14.5v-11z" stroke="currentColor" stroke-opacity="0.9" stroke-width="1.2" fill="none"/>
+            <path d="M2 3.6l9.2 6.3c.6.4 1.4.4 2 0L22 3.6" stroke="currentColor" stroke-opacity="0.9" stroke-width="1.2" fill="none"/>
+          </svg>
+          <span style="font-weight:700">Email</span>
+        </a>
+
+        <!-- fixed Call button with SVG -->
+        <a class="btn-call" href="tel:+91XXXXXXXXXX" aria-label="Call Pest Control India">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 5c0-1.1.9-2 2-2h2.5c.55 0 1 .45 1 1 0 0-.3 2.2-1.6 4.2-.1.17-.06.39.11.51l2.2 1.6c1.7 1.2 3.8 3.3 5 5l1.6 2.2c.12.17.34.21.51.11C18.9 15.8 21 16.1 21 16.1c.55 0 1 .45 1 1V19c0 1.1-.9 2-2 2A19 19 0 013 5z" fill="currentColor"/>
+          </svg>
+          <span>Call</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- hero -->
+    <div class="hero">
+      <main class="hero-main fade delay1" id="heroMain" aria-labelledby="mainTitle">
+        <div class="kicker">Trusted · Local · Fast</div>
+        <h2 id="mainTitle" class="title">Effective pest control for homes & businesses in Alwar</h2>
+        <p class="subtitle">Fast inspections, safe treatments, and guaranteed follow-ups. We handle termites, mosquitoes, rodents, cockroaches, bed bugs and ongoing maintenance.</p>
+
+        <!-- compact service strip (contrast fixed) -->
+        <div style="margin-top:16px" class="services-strip" role="list" aria-label="Primary services">
+          <div class="service-item" role="listitem">
+            <div class="service-icon" aria-hidden="true">🐜</div>
+            <div>
+              <div class="service-label">Termite protection</div>
+              <div class="service-sub">Structural treatments</div>
+            </div>
+          </div>
+
+          <div class="service-item" role="listitem">
+            <div class="service-icon" aria-hidden="true">🦟</div>
+            <div>
+              <div class="service-label">Mosquito control</div>
+              <div class="service-sub">Indoor & outdoor</div>
+            </div>
+          </div>
+
+          <div class="service-item" role="listitem">
+            <div class="service-icon" aria-hidden="true">🐀</div>
+            <div>
+              <div class="service-label">Rodent solutions</div>
+              <div class="service-sub">Baits & exclusion</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- features (bigger) -->
+        <div class="features" style="margin-top:22px">
+          <div class="feature">
+            <div class="ficon" aria-hidden="true">✔</div>
+            <div>
+              <h4>Pet-safe options</h4>
+              <p>Protocols tailored for homes with pets and children.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="ficon" aria-hidden="true">⏱</div>
+            <div>
+              <h4>Rapid response</h4>
+              <p>Same-day or next-day inspections when available.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="ficon" aria-hidden="true">🔒</div>
+            <div>
+              <h4>Follow-up guarantee</h4>
+              <p>Post-treatment check to ensure the problem is resolved.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <!-- classy deep-green quote button -->
+          <a class="quote-btn" id="quoteMain" href="mailto:info@pestcontrolsindia.com?subject=Quote%20Request%20-%20Pest%20Control%20India" aria-label="Request a quote">
+            <!-- small envelope icon -->
+            <svg width="18" height="14" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M1 3.5C1 2.7 1.7 2 2.5 2h19c.8 0 1.5.7 1.5 1.5v11c0 .8-.7 1.5-1.5 1.5h-19C1.7 16 1 15.3 1 14.5v-11z" stroke="rgba(255,255,255,0.95)" stroke-width="1.1" fill="none"/>
+              <path d="M2 3.6l9.2 6.3c.6.4 1.4.4 2 0L22 3.6" stroke="rgba(255,255,255,0.95)" stroke-width="1.1" fill="none"/>
+            </svg>
+            Request Quote
+          </a>
+
+          <!-- call ghost (secondary) -->
+          <a class="quote-ghost" href="tel:+91XXXXXXXXXX" aria-label="Call or WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 5c0-1.1.9-2 2-2h2.5c.55 0 1 .45 1 1 0 0-.3 2.2-1.6 4.2-.1.17-.06.39.11.51l2.2 1.6c1.7 1.2 3.8 3.3 5 5l1.6 2.2c.12.17.34.21.51.11C18.9 15.8 21 16.1 21 16.1c.55 0 1 .45 1 1V19c0 1.1-.9 2-2 2A19 19 0 013 5z" fill="currentColor"/>
+            </svg>
+            Call / WhatsApp
+          </a>
+        </div>
+
+        <div class="testimonials" style="margin-top:22px">
+          <div class="testi">
+            <strong>“Fixed our termite issue quickly — polite team.”</strong>
+            <p class="muted">— R. Sharma, Alwar</p>
+          </div>
+        </div>
+      </main>
+
+      <!-- aside: larger contact -->
+      <aside class="aside fade delay2" id="asidePanel" aria-label="Contact & booking">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div>
+            <div class="small-muted">Call / WhatsApp</div>
+            <div class="tel">+91 XXXXXXXXXX</div>
+          </div>
+          <div style="text-align:right">
+            <div class="small-muted">Service area</div>
+            <div style="font-weight:800">Alwar & nearby</div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;margin-top:6px;align-items:center">
+          <a class="request-btn" href="tel:+91XXXXXXXXXX" aria-label="Call now">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+              <path d="M3 5c0-1.1.9-2 2-2h2.5c.55 0 1 .45 1 1 0 0-.3 2.2-1.6 4.2-.1.17-.06.39.11.51l2.2 1.6c1.7 1.2 3.8 3.3 5 5l1.6 2.2c.12.17.34.21.51.11C18.9 15.8 21 16.1 21 16.1c.55 0 1 .45 1 1V19c0 1.1-.9 2-2 2A19 19 0 013 5z" fill="currentColor"/>
+            </svg>
+            Call now
+          </a>
+
+          <!-- aside email button matches topbar style -->
+          <a class="btn-email" id="emailAside" href="mailto:info@pestcontrolsindia.com" aria-label="Email">
+            <svg width="16" height="12" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M1 3.5C1 2.7 1.7 2 2.5 2h19c.8 0 1.5.7 1.5 1.5v11c0 .8-.7 1.5-1.5 1.5h-19C1.7 16 1 15.3 1 14.5v-11z" stroke="currentColor" stroke-opacity="0.9" stroke-width="1.2" fill="none"/>
+              <path d="M2 3.6l9.2 6.3c.6.4 1.4.4 2 0L22 3.6" stroke="currentColor" stroke-opacity="0.9" stroke-width="1.2" fill="none"/>
+            </svg>
+            Email
+          </a>
+        </div>
+
+        <div style="border-top:1px dashed rgba(0,0,0,0.04);padding-top:12px;margin-top:12px">
+          <div class="small-muted">Payment</div>
+          <div style="font-weight:700;margin-top:8px">UPI · Cash · Bank transfer</div>
+        </div>
+
+        <div style="margin-top:14px" class="center">
+          <a id="quoteAside" class="quote-btn" href="mailto:info@pestcontrolsindia.com?subject=Quote%20Request%20-%20Pest%20Control%20India" aria-label="Request a quote">Request Quote</a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="space"></div>
+
+    <footer>
+      <div class="muted">© 2026 Pest Control India — Alwar, Rajasthan</div>
+    </footer>
+  </div>
+
+<script>
+  // Theme toggle (persists in localStorage)
+  (function(){
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const storageKey = 'pci-theme-v3';
+
+    function applyTheme(t){
+      if(t === 'dark'){ body.classList.add('dark'); toggle.textContent = '☀️ Light' }
+      else { body.classList.remove('dark'); toggle.textContent = '🌙 Dark' }
+    }
+
+    const saved = localStorage.getItem(storageKey);
+    if(saved) applyTheme(saved);
+    else {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      applyTheme(prefersDark ? 'dark' : 'light');
+    }
+
+    toggle.addEventListener('click', ()=>{
+      const next = body.classList.contains('dark') ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem(storageKey, next);
+      setAsideHeight();
+    });
+  })();
+
+  // Keep aside height matching hero-main for balanced layout
+  function setAsideHeight(){
+    const main = document.getElementById('heroMain');
+    const aside = document.getElementById('asidePanel');
+    if(!main || !aside) return;
+    aside.style.minHeight = '0px';
+    const mainRect = main.getBoundingClientRect();
+    const computed = Math.ceil(mainRect.height);
+    aside.style.minHeight = computed + 'px';
+  }
+
+  window.addEventListener('load', setAsideHeight);
+  let resizeTimer;
+  window.addEventListener('resize', ()=> {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(setAsideHeight, 120);
+  });
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(setAsideHeight);
+  }
+</script>
+</body>
+</html>
